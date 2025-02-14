@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fff;
+  --background-light: #fff;
+  --background-secondary-light: #818C99;
+  --text: #171A1F;
+  --text-subscribe: #71747A;
+  --text-light: #fff;
+  --primary-color: #83325A;
+  --secondary-color: #F2F3F5;
+
+  --border-light: #71747A;
+}
+
+.dark{
+  &:root {
+    --background: #000;
+    --background-light: #19191A;
+    --background-secondary-light: #363636;
+    --text: #D9D9D9;
+    --text-subscribe: #71747A;
+    --text-light: #fff;
+    --primary-color: #8E3F66;
+    --secondary-color: #363636;
+
+    --border-light: #71747A;
+  }
+}
+
+*{
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+
+}
+
+body {
+  color: var(--text);
+  background: var(--background);
+  transition: color, background 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  input[type='range']::-webkit-slider-thumb {
+    @apply appearance-none w-4 h-4 bg-white outline outline-[3px] outline-[var(--primary-color)] rounded-full cursor-grab transition-shadow hover:drop-shadow-lg ease-in-out;
+  }
+
+  input[type=range] {
+    @apply appearance-none h-1 border-y-[var(--primary-color)] border-slate-200 border-y-2 rounded-full;
+  }
+}
