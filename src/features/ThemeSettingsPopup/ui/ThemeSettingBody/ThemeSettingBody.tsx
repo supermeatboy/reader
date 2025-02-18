@@ -44,12 +44,13 @@ export const ThemeSettingBody = () => {
         gap-8
         flex
         flex-wrap
-        bg-[var(--background-light)]
+        bg-[var(--bg-popup)]
         px-6
         py-8
         rounded-xl
         shadow-xl
-        w-[380px]
+        w-full
+        sm:w-[380px]
         '>
             <div className='flex gap-4 items-center justify-between w-full'>
                 <IconLabel icon={Comment} text='Коментарі до абзаців'/>
@@ -109,7 +110,7 @@ export const ThemeSettingBody = () => {
                 <IconLabel icon={TextType} text='Шрифт'/>
                 <FontSelect/>
             </div>
-            <div className='flex gap-4 items-center justify-between w-full py-4 border-t border-[var(--border-light)]'>
+            <div className='flex gap-4 items-center justify-between w-full py-4 border-t border-[var(--divider)]'>
                 <div className='
                     text-base
                     font-medium
@@ -141,7 +142,7 @@ export const ThemeSettingBody = () => {
                     "/>
                 </label>
             </div>
-            <div className='flex gap-4 items-center justify-between w-full pt-4 -mt-8 border-t border-[var(--border-light)]'>
+            <div className='flex gap-4 items-center justify-between w-full pt-4 -mt-8 border-t border-[var(--divider)]'>
                 <div>Книжний режим прочитання</div>
                 <label className="inline-flex items-center cursor-pointer">
                     <input type="checkbox" value="" className="sr-only peer"/>

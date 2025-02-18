@@ -4,15 +4,15 @@ import {useUserSetting} from "@/context/UserSettingsProvider";
 import {fonts} from '@/shared/constants/fonts'
 
 export const FontSelect = () => {
-    // @ts-ignore
     const {userSettings, setData} = useUserSetting();
+    const fontIdx = userSettings.fontIndex ?? 0
 
     const nextFont = () => {
-        setData({fontIndex: (userSettings?.fontIndex + 1) % fonts.length});
+        setData({fontIndex: (fontIdx + 1) % fonts?.length});
     };
 
     const prevFont = () => {
-        setData({fontIndex: (userSettings?.fontIndex - 1 + fonts.length) % fonts.length});
+        setData({fontIndex: (fontIdx - 1 + fonts.length) % fonts?.length});
     };
 
 
@@ -26,7 +26,7 @@ export const FontSelect = () => {
         rounded-full
         '>
             <BackArrow onClick={prevFont} className="cursor-pointer text-[var(--primary-color)]" />
-            <div className='font-medium text-sm'>{fonts[userSettings?.fontIndex]}</div>
+            <div className='font-medium text-sm'>{fonts[fontIdx]}</div>
             <NextArrow onClick={nextFont} className="cursor-pointer text-[var(--primary-color)]" />
         </div>
     )

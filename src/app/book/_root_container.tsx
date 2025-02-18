@@ -18,7 +18,7 @@ export const RootContainer = ({children}: Readonly<{
                     fontSize: `${userSettings?.fontSize}px`,
                     fontFamily: `${fonts[userSettings.fontIndex ?? 0]}`
                 }}
-                className={`flex flex-wrap items-start w-full pt-8 px-[18px] mx-auto`}>
+                className={`root-container flex flex-wrap items-start w-full pt-8 px-[18px] mx-auto`}>
                 {children}
             </main>
         </>
