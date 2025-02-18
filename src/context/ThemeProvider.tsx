@@ -27,6 +27,12 @@ export const ThemeProvider = ({children}: { children: React.ReactNode }) => {
     return <ThemeContext.Provider value={{theme, toggleTheme}}>{children}</ThemeContext.Provider>;
 };
 
-export const useTheme = (): ThemeContextProps | undefined  => {
-    return useContext(ThemeContext);
+export const useTheme = (): ThemeContextProps  => {
+    const context = useContext(ThemeContext);
+
+    if (!context) {
+        throw new Error("useTheme must be used within a ThemeProvider");
+    }
+
+    return context;
 };
