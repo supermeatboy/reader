@@ -142,7 +142,7 @@ export const ThemeSettingBody = () => {
                     "/>
                 </label>
             </div>
-            <div className='flex gap-4 items-center justify-between w-full pt-4 -mt-8 border-t border-[var(--divider)]'>
+            <div className='hidden sm:flex gap-4 items-center justify-between w-full pt-4 -mt-8 border-t border-[var(--divider)]'>
                 <div>Книжний режим прочитання</div>
                 <label className="inline-flex items-center cursor-pointer">
                     <input type="checkbox" value="" className="sr-only peer"/>

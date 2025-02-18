@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
 ## Getting Started
+Created by Mykola Sribniak
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+1. npm install
+
+2. npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Що не зроблено відносно ТЗ:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Натискання на картинку в тексті не збільшує картинку
+2. Червоний рядок
 
-## Learn More
+Які розбіжності з дизайном і чому:
 
-To learn more about Next.js, take a look at the following resources:
+1. Відступи майже всі згідно дизайну, в основному розбіжності 
+    через класи Tailwind оскільки деякі відступи не кратні 2 тому
+    можуть бути мінімальні розбіжності
+2. Не реалізовував елементи в налаштування такі як "Колір теми", "Ширина полів", 
+   "Розмір тексту" для мобільної версії, оскільки випав з графіку і так, схожий елемент 
+   є "Коментарі до абзаців"
+3. Є баг з модалкою в мобільній версії коли скролиш в верх модальне вікно сунеться
+    на висоту хедера, це нюанси реалізації зі скроллом і позиціонування вікна, виправити
+    можна але знову ж + час, не хотів затримувати ще довше
+4. У модальному вікні немає кнопочки закриття, виділив час на реалізацію 
+   більш критичного функціоналу
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+Що зроблено, короткий опис:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Темізація тільки чорна та біла
+2. Динамічна зміна розміру тексту (Розмір тексту)
+3. Динамічна зміна розміру полів з лівого так правого краю
+4. Динамічна зміна шрифту
+5. Сторінка книги і з кнопкою переходу на сторінку "/book"
+   (роути потрібно буде змінити на динаічні в майбутньому)
+6. Header з Action Bar
+7. Архітектура FSD з певними доповненнями в вигляді контексту і констант
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Що варто було б доробити:
+
+Я робив ставку на кількість функціоналу і подібність дизайну, є місяці для
+оптимізації, також можна було б ще більше декомпозувати компоненти для більшої
+реюзабильності
+
+
+
+
+
